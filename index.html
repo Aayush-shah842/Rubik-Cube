@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubik's Cube Solver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎲 Rubik's Cube Solver</h1>
+            <p></p>
+        </div>
+
+        <div class="main-content">
+            <!-- Cube Display Section -->
+            <div class="cube-section">
+                <div id="cubeDisplay" class="cube-display"></div>
+            </div>
+
+            <!-- Status Section -->
+            <div id="statusSection" class="status-section solved">
+                <h2>✅ Status: Solved</h2>
+                <p>Ready to scramble!</p>
+            </div>
+
+            <!-- Controls Grid -->
+            <div class="controls-grid">
+                <!-- Main Controls -->
+                <div class="control-panel">
+                    <h3>🎮 Main Controls</h3>
+                    <div class="main-controls">
+                        <button class="btn btn-primary" onclick="scrambleCube()">
+                            🎲 Scramble Cube
+                        </button>
+                        <button class="btn btn-success" onclick="showHint()" id="hintBtn" disabled>
+                            💡 Get Hint
+                        </button>
+                        <button class="btn btn-secondary" onclick="resetCube()">
+                            🔄 Reset
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Manual Move Controls -->
+                <div class="control-panel">
+                    <h3>🎯 Manual Moves</h3>
+                    <div class="move-grid">
+                        <button class="btn btn-move" onclick="executeMove('F')">F</button>
+                        <button class="btn btn-move" onclick="executeMove('R')">R</button>
+                        <button class="btn btn-move" onclick="executeMove('U')">U</button>
+                        <button class="btn btn-move" onclick="executeMove('F\'')">F'</button>
+                        <button class="btn btn-move" onclick="executeMove('R\'')">R'</button>
+                        <button class="btn btn-move" onclick="executeMove('U\'')">U'</button>
+                        <button class="btn btn-move" onclick="executeMove('D')">D</button>
+                        <button class="btn btn-move" onclick="executeMove('L')">L</button>
+                        <button class="btn btn-move" onclick="executeMove('B')">B</button>
+                        <button class="btn btn-move" onclick="executeMove('D\'')">D'</button>
+                        <button class="btn btn-move" onclick="executeMove('L\'')">L'</button>
+                        <button class="btn btn-move" onclick="executeMove('B\'')">B'</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hint Section -->
+            <div id="hintSection" class="hint-section" style="display: none;">
+                <h3>💡 Solving Hint</h3>
+                <div id="hintText" class="hint-text">
+                    Click "Get Hint" to see the next suggested move!
+                </div>
+            </div>
+
+            <!-- Color Guide -->
+            <div class="control-panel">
+                <h3>🎨 Cube Colors</h3>
+                <div class="face-labels">
+                    <div class="face-label white">⬜ White (Bottom)</div>
+                    <div class="face-label yellow">🟨 Yellow (Top)</div>
+                    <div class="face-label green">🟩 Green (Front)</div>
+                    <div class="face-label blue">🟦 Blue (Back)</div>
+                    <div class="face-label red">🟥 Red (Right)</div>
+                    <div class="face-label orange">🟧 Orange (Left)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

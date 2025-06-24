@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.header {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 3em;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header p {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+.main-content {
+  padding: 40px;
+}
+
+.cube-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cube-display {
+  border: 3px solid #333;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.status-section {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.status-section.solved {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  border-color: #28a745;
+}
+
+.status-section.scrambled {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  color: #856404;
+  border-color: #ffc107;
+}
+
+.status-section h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.status-section p {
+  font-size: 1.1em;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.control-panel {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid #e9ecef;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.control-panel h3 {
+  margin-bottom: 20px;
+  color: #495057;
+  font-size: 1.4em;
+  text-align: center;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.main-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.move-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  color: white;
+}
+
+.btn-move {
+  background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+  color: white;
+  font-family: "Courier New", monospace;
+  font-size: 18px;
+  min-height: 50px;
+  font-weight: 900;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.hint-section {
+  background: #e3f2fd;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  border: 2px solid #2196f3;
+  text-align: center;
+}
+
+.hint-section h3 {
+  color: #1565c0;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.hint-text {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  color: #333;
+  border-left: 5px solid #2196f3;
+  font-weight: bold;
+}
+
+.face-labels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  text-align: center;
+}
+
+.face-label {
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #dee2e6;
+  font-weight: bold;
+}
+
+.face-label.white {
+  background: #ffffff;
+  color: #333;
+}
+.face-label.yellow {
+  background: #ffff00;
+  color: #333;
+}
+.face-label.green {
+  background: #00ff00;
+  color: #333;
+}
+.face-label.blue {
+  background: #0000ff;
+  color: white;
+}
+.face-label.red {
+  background: #ff0000;
+  color: white;
+}
+.face-label.orange {
+  background: #ff8000;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2.2em;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .controls-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .move-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
